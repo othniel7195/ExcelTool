@@ -275,9 +275,9 @@ print json.dumps(beList, encoding="UTF-8", ensure_ascii=False)
 sscList = searchsheetCol(beList, "起保日期")
 print json.dumps(sscList, encoding="UTF-8", ensure_ascii=False)
 
-
 ersList = getEveryRowsSearch(sscList,beList)
 print json.dumps(ersList, encoding="UTF-8", ensure_ascii=False)
+
 
 #通过日期查询文件名字
 #基础保单号
@@ -286,13 +286,23 @@ print "基础数据的保单号: {0}".format(basicPrdNumber)
 
 for epro_date in ersList:
     fpath = getFilePathWithStartProtectDate(mList, epro_date[1][1], basicPrdNumber)
-    print "根据起保日期查询到的文件路径： %s" %fpath
+    #print "根据起保日期查询到的文件路径： %s" %fpath
     if fpath:
         ecwb = load_workbook(fpath)
         ec_addws = ecwb["增加被保险人".decode("utf-8")]
         ec_addList = getSheetAllData(ec_addws)
-        for test in ec_addList:
-            print json.dumps(test, encoding="UTF-8", ensure_ascii=False)
+        for test in ec_addList[2:]:
+            add_name = test[1][1] #type: str
+            if add_name:
+                for brow in beList[2:]:
+                    if brow[1][1] == add_name:
+                        print json.dumps(test, encoding="UTF-8", ensure_ascii=False)
+                        print json.dumps(brow, encoding="UTF-8", ensure_ascii=False)
+
+
+
+
+
 
 
 

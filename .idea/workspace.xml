@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ecfbf7dc-b37b-4e1d-826a-8a1e0dc00288" name="Default" comment="" />
+    <list default="true" id="ecfbf7dc-b37b-4e1d-826a-8a1e0dc00288" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ExcelAutoTool.py" afterPath="$PROJECT_DIR$/ExcelAutoTool.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,16 +14,28 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/ExcelTool$ExcelAutoTool.coverage" NAME="ExcelAutoTool Coverage Results" MODIFIED="1513249688576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ExcelTool$ExcelAutoTool.coverage" NAME="ExcelAutoTool Coverage Results" MODIFIED="1513506499510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ExcelTool$ExcelData.coverage" NAME="ExcelData Coverage Results" MODIFIED="1513222884013" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="ExcelTool" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="SheetData.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SheetData.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
+            <state relative-caret-position="-323">
               <caret line="26" column="8" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
               <folding>
                 <element signature="e#47#81#0" expanded="true" />
@@ -31,28 +47,8 @@
       <file leaf-file-name="re.py" pinned="false" current-in-tab="false">
         <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/re.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
+            <state relative-caret-position="2550">
               <caret line="172" column="4" lean-forward="false" selection-start-line="172" selection-start-column="4" selection-end-line="172" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cell.py" pinned="false" current-in-tab="false">
-        <entry file="file:///Library/Python/2.7/site-packages/openpyxl/cell/cell.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="113" column="17" lean-forward="false" selection-start-line="113" selection-start-column="17" selection-end-line="113" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="excel.py" pinned="false" current-in-tab="false">
-        <entry file="file:///Library/Python/2.7/site-packages/openpyxl/reader/excel.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="140" column="4" lean-forward="false" selection-start-line="140" selection-start-column="4" selection-end-line="140" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -61,8 +57,8 @@
       <file leaf-file-name="ExcelAutoTool.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ExcelAutoTool.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89">
-              <caret line="209" column="0" lean-forward="true" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
+            <state relative-caret-position="231">
+              <caret line="292" column="46" lean-forward="true" selection-start-line="292" selection-start-column="46" selection-end-line="292" selection-end-column="46" />
               <folding>
                 <element signature="e#47#81#0" expanded="true" />
               </folding>
@@ -88,6 +84,9 @@
       <find>search_sheet_col</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -104,10 +103,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="137" />
     <option name="y" value="23" />
-    <option name="width" value="1509" />
-    <option name="height" value="992" />
+    <option name="width" value="1280" />
+    <option name="height" value="777" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -124,6 +122,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -146,20 +145,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="17-8-20众安换人" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ExcelTool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ExcelTool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="17-8-13众安换人" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -167,13 +152,12 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -412,18 +396,27 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="137" y="23" width="1509" height="992" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="777" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14928426" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17124394" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3188889" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33868614" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24955277" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24931507" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -460,6 +453,72 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/ExcelAutoTool.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3690">
+          <caret line="252" column="37" lean-forward="true" selection-start-line="252" selection-start-column="37" selection-end-line="252" selection-end-column="37" />
+          <folding>
+            <element signature="e#47#81#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SheetData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="26" column="8" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+          <folding>
+            <element signature="e#47#81#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/re.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2550">
+          <caret line="172" column="4" lean-forward="false" selection-start-line="172" selection-start-column="4" selection-end-line="172" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExcelAutoTool.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding>
+            <element signature="e#47#81#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SheetData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="26" column="8" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+          <folding>
+            <element signature="e#47#81#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/re.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2550">
+          <caret line="172" column="4" lean-forward="false" selection-start-line="172" selection-start-column="4" selection-end-line="172" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExcelAutoTool.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3045">
+          <caret line="209" column="0" lean-forward="true" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
+          <folding>
+            <element signature="e#47#81#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SheetData.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -470,14 +529,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.1/python_stubs/-2125986627/__builtin__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13545">
-          <caret line="903" column="8" lean-forward="false" selection-start-line="903" selection-start-column="8" selection-end-line="903" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.1/python_stubs/-2125986627/__builtin__.py" />
     <entry file="file://$PROJECT_DIR$/SheetData.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -492,49 +544,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3120">
           <caret line="208" column="4" lean-forward="false" selection-start-line="208" selection-start-column="4" selection-end-line="208" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file:///Library/Python/2.7/site-packages/openpyxl/reader/excel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2100">
-          <caret line="140" column="4" lean-forward="false" selection-start-line="140" selection-start-column="4" selection-end-line="140" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Python/2.7/site-packages/openpyxl/worksheet/worksheet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="17" lean-forward="true" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Python/2.7/site-packages/openpyxl/cell/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="8" lean-forward="true" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Python/2.7/site-packages/openpyxl/cell/cell.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1815">
-          <caret line="121" column="18" lean-forward="false" selection-start-line="121" selection-start-column="8" selection-end-line="121" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.1/python_stubs/-2125986627/__builtin__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50445">
-          <caret line="3363" column="8" lean-forward="false" selection-start-line="3363" selection-start-column="8" selection-end-line="3363" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///Library/Python/2.7/site-packages/openpyxl/reader/excel.py" />
+    <entry file="file:///Library/Python/2.7/site-packages/openpyxl/worksheet/worksheet.py" />
+    <entry file="file:///Library/Python/2.7/site-packages/openpyxl/cell/__init__.py" />
+    <entry file="file:///Library/Python/2.7/site-packages/openpyxl/cell/cell.py" />
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.1/python_stubs/-2125986627/__builtin__.py" />
     <entry file="file://$PROJECT_DIR$/SheetData.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -545,14 +562,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.1/python_stubs/-2125986627/__builtin__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37545">
-          <caret line="2503" column="6" lean-forward="false" selection-start-line="2503" selection-start-column="6" selection-end-line="2503" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.1/python_stubs/-2125986627/__builtin__.py" />
     <entry file="file://$PROJECT_DIR$/SheetData.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -563,14 +573,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.1/python_stubs/-2125986627/__builtin__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26475">
-          <caret line="1765" column="6" lean-forward="false" selection-start-line="1765" selection-start-column="6" selection-end-line="1765" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.1/python_stubs/-2125986627/__builtin__.py" />
     <entry file="file://$PROJECT_DIR$/SheetData.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -583,14 +586,7 @@
     </entry>
     <entry file="file:///Library/Python/2.7/site-packages/openpyxl/worksheet/worksheet.py" />
     <entry file="file:///Library/Python/2.7/site-packages/openpyxl/cell/cell.py" />
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.1/python_stubs/-2125986627/__builtin__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26475">
-          <caret line="1765" column="6" lean-forward="false" selection-start-line="1765" selection-start-column="6" selection-end-line="1765" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.1/python_stubs/-2125986627/__builtin__.py" />
     <entry file="file://$PROJECT_DIR$/SheetData.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -603,14 +599,7 @@
     </entry>
     <entry file="file:///Library/Python/2.7/site-packages/openpyxl/worksheet/worksheet.py" />
     <entry file="file:///Library/Python/2.7/site-packages/openpyxl/cell/cell.py" />
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.1/python_stubs/-2125986627/__builtin__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26475">
-          <caret line="1765" column="6" lean-forward="false" selection-start-line="1765" selection-start-column="6" selection-end-line="1765" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.1/python_stubs/-2125986627/__builtin__.py" />
     <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/pyparsing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
@@ -637,7 +626,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-67">
           <caret line="32" column="4" lean-forward="false" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -649,79 +637,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///Library/Python/2.7/site-packages/openpyxl/worksheet/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="45" column="17" lean-forward="false" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Python/2.7/site-packages/openpyxl/cell/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="8" lean-forward="false" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.1/python_stubs/-2125986627/time.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="147" column="22" lean-forward="true" selection-start-line="147" selection-start-column="22" selection-end-line="147" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.1/python_stubs/-2125986627/__builtin__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="3354" column="6" lean-forward="false" selection-start-line="3354" selection-start-column="6" selection-end-line="3354" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Python/2.7/site-packages/openpyxl/reader/excel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="140" column="4" lean-forward="false" selection-start-line="140" selection-start-column="4" selection-end-line="140" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///Library/Python/2.7/site-packages/openpyxl/worksheet/views.py" />
+    <entry file="file:///Library/Python/2.7/site-packages/openpyxl/cell/__init__.py" />
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.1/python_stubs/-2125986627/time.py" />
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.1/python_stubs/-2125986627/__builtin__.py" />
+    <entry file="file:///Library/Python/2.7/site-packages/openpyxl/reader/excel.py" />
     <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3120">
           <caret line="208" column="4" lean-forward="false" selection-start-line="208" selection-start-column="4" selection-end-line="208" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file:///Library/Python/2.7/site-packages/openpyxl/cell/cell.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="113" column="17" lean-forward="false" selection-start-line="113" selection-start-column="17" selection-end-line="113" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///Library/Python/2.7/site-packages/openpyxl/cell/cell.py" />
     <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/re.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
+        <state relative-caret-position="2550">
           <caret line="172" column="4" lean-forward="false" selection-start-line="172" selection-start-column="4" selection-end-line="172" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file:///Library/Python/2.7/site-packages/openpyxl/worksheet/worksheet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="82" column="6" lean-forward="false" selection-start-line="82" selection-start-column="6" selection-end-line="82" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///Library/Python/2.7/site-packages/openpyxl/worksheet/worksheet.py" />
     <entry file="file://$PROJECT_DIR$/SheetData.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
+        <state relative-caret-position="-323">
           <caret line="26" column="8" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
           <folding>
             <element signature="e#47#81#0" expanded="true" />
@@ -731,8 +671,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ExcelAutoTool.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="209" column="0" lean-forward="true" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
+        <state relative-caret-position="231">
+          <caret line="292" column="46" lean-forward="true" selection-start-line="292" selection-start-column="46" selection-end-line="292" selection-end-column="46" />
           <folding>
             <element signature="e#47#81#0" expanded="true" />
           </folding>
