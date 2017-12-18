@@ -278,6 +278,13 @@ print json.dumps(sscList, encoding="UTF-8", ensure_ascii=False)
 ersList = getEveryRowsSearch(sscList,beList)
 print json.dumps(ersList, encoding="UTF-8", ensure_ascii=False)
 
+#查询终保日期
+sscList2 = searchsheetCol(beList, "终保日期")
+print json.dumps(sscList2, encoding="UTF-8", ensure_ascii=False)
+
+ersList2 = getEveryRowsSearch(sscList2,beList)
+print json.dumps(ersList2, encoding="UTF-8", ensure_ascii=False)
+
 
 #通过日期查询文件名字
 #基础保单号
@@ -288,6 +295,8 @@ for epro_date in ersList:
     fpath = getFilePathWithStartProtectDate(mList, epro_date[1][1], basicPrdNumber)
     #print "根据起保日期查询到的文件路径： %s" %fpath
     if fpath:
+        print "此用户查询到了相应文件夹"
+        print json.dumps(beList[epro_date[0]], encoding="UTF-8", ensure_ascii=False)
         ecwb = load_workbook(fpath)
         ec_addws = ecwb["增加被保险人".decode("utf-8")]
         ec_addList = getSheetAllData(ec_addws)
@@ -296,13 +305,16 @@ for epro_date in ersList:
             if add_name:
                 for brow in beList[2:]:
                     if brow[1][1] == add_name:
-                        print json.dumps(test, encoding="UTF-8", ensure_ascii=False)
-                        print json.dumps(brow, encoding="UTF-8", ensure_ascii=False)
+                        pass
+                        # print json.dumps(test, encoding="UTF-8", ensure_ascii=False)
+                        # print json.dumps(brow, encoding="UTF-8", ensure_ascii=False)
 
 
 
 
-
+    else:
+        print "此用户没有查到数据："
+        print json.dumps(beList[epro_date[0]], encoding="UTF-8", ensure_ascii=False)
 
 
 
