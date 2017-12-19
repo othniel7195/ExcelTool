@@ -111,10 +111,16 @@ def getSheetAllData(ws):
 
     for row_iterate in ws.iter_rows(None, ws.min_row, ws.max_row, ws.min_column, col):
         every_row = []
+        add_in = True
         for cel in row_iterate:
             every_row.append((cel.coordinate, cel.value))
+            if cel.column == 'B' and cel.value == None and int(cel.row) > 4:
+                add_in = False
+                break
 
-        data.append(every_row)
+
+        if add_in:
+            data.append(every_row)
 
     return data
 
@@ -160,12 +166,13 @@ def getDateString(dateStr):
         return dateList[0]
     return ""
 
-def compareDateEqual(date1, date2):
+def compareDateEqual(date1, date2, isStart):
 
     """
     比较时间是否相等
     :type date1: str 在保日期
     :type date2: str 文件夹日期
+    :type isStart: bool 是否启保
     :rtype: bool
     """
     if len(date1) == 0:
@@ -212,9 +219,11 @@ def compareDateEqual(date1, date2):
     d1 = datel1[2]
     d2 = datel2[2]
     day_compare_result = False
-    #在保日期 = 是文件夹日期 +1
-    d2 = int(d2) + 1
-    if int(d1) == d2:
+    #在保日期 = 是文件夹日期 +1 终保日期 = 文件夹日期
+    if isStart:
+        d2 = int(d2) + 1
+
+    if int(d1) == int(d2):
         day_compare_result = True
 
     if year_compare_result and month_compare_result and day_compare_result:
@@ -233,7 +242,7 @@ def getFilePathWithStartProtectDate(all_dir, protect_date, basic_protect_number)
     for edir in all_dir:
         d1 = getDateString(protect_date)
         d2 = getDateString(edir[0])
-        if compareDateEqual(d1, d2):
+        if compareDateEqual(d1, d2, True):
             edict = edir[2] #type: dict
            # print json.dumps(edict, encoding="UTF-8", ensure_ascii=False)
             for key, value in edict.items():
@@ -244,9 +253,25 @@ def getFilePathWithStartProtectDate(all_dir, protect_date, basic_protect_number)
     return None
 
 
+def getFilePathWithEndProtectDate(all_dir, end_protect_date, basic_protect_number):
+    """
 
+    :type all_dir: list [["文件夹名字","文件夹创建时间",{"保单号":"文件名",...}],...]
+    :type end_protect_date: str   终保时间
+    :rtype: str  基础数据中的终保日期对应的文件夹中对应保单的文件路径
+    """
+    for edir in all_dir:
+        d1 = getDateString(end_protect_date)
+        d2 = getDateString(edir[0])
+        if compareDateEqual(d1, d2, False):
+            edict = edir[2]  # type: dict
+            # print json.dumps(edict, encoding="UTF-8", ensure_ascii=False)
+            for key, value in edict.items():
+                if key == basic_protect_number:
+                    fpath = "{0}/{1}/{2}".format(sys.path[0], edir[0], value)
+                    return fpath
 
-
+    return None
 
 
 def getBasicExcelSheet():
@@ -273,17 +298,38 @@ print json.dumps(beList, encoding="UTF-8", ensure_ascii=False)
 
 #查询起保日期
 sscList = searchsheetCol(beList, "起保日期")
-print json.dumps(sscList, encoding="UTF-8", ensure_ascii=False)
+#print json.dumps(sscList, encoding="UTF-8", ensure_ascii=False)
 
 ersList = getEveryRowsSearch(sscList,beList)
-print json.dumps(ersList, encoding="UTF-8", ensure_ascii=False)
+#print json.dumps(ersList, encoding="UTF-8", ensure_ascii=False)
 
 #查询终保日期
-sscList2 = searchsheetCol(beList, "终保日期")
-print json.dumps(sscList2, encoding="UTF-8", ensure_ascii=False)
+sscList2 = searchsheetCol(beList, "退保终止日期")
+#print json.dumps(sscList2, encoding="UTF-8", ensure_ascii=False)
 
 ersList2 = getEveryRowsSearch(sscList2,beList)
-print json.dumps(ersList2, encoding="UTF-8", ensure_ascii=False)
+#print json.dumps(ersList2, encoding="UTF-8", ensure_ascii=False)
+
+#获取姓名
+sncList = searchsheetCol(beList, "姓名")
+esncList = getEveryRowsSearch(sncList, beList)
+#print json.dumps(esncList, encoding="UTF-8", ensure_ascii=False)
+
+#合并起保，终保
+lastDates = []
+for idx in range(0, len(ersList), 1):
+    l1 = ersList[idx]
+    l2 = ersList2[idx]
+    l3 = esncList[idx]
+    edates = []
+    edates.append(l1[0])
+    edates.append(l1[1])
+    edates.append(l2[1])
+    edates.append(l3[1])
+    lastDates.append(edates)
+
+
+print json.dumps(lastDates, encoding="UTF-8", ensure_ascii=False)
 
 
 #通过日期查询文件名字
@@ -291,31 +337,40 @@ print json.dumps(ersList2, encoding="UTF-8", ensure_ascii=False)
 basicPrdNumber = re.findall(r"[a-zA-Z0-9]+", beList[0][0][1])[0]
 print "基础数据的保单号: {0}".format(basicPrdNumber)
 
-for epro_date in ersList:
-    fpath = getFilePathWithStartProtectDate(mList, epro_date[1][1], basicPrdNumber)
+for epro_date in lastDates:
+    del_path = getFilePathWithEndProtectDate(mList, epro_date[2][1], basicPrdNumber)
+    add_path = getFilePathWithStartProtectDate(mList, epro_date[1][1], basicPrdNumber)
     #print "根据起保日期查询到的文件路径： %s" %fpath
-    if fpath:
-        print "此用户查询到了相应文件夹"
-        print json.dumps(beList[epro_date[0]], encoding="UTF-8", ensure_ascii=False)
-        ecwb = load_workbook(fpath)
-        ec_addws = ecwb["增加被保险人".decode("utf-8")]
-        ec_addList = getSheetAllData(ec_addws)
-        for test in ec_addList[2:]:
-            add_name = test[1][1] #type: str
-            if add_name:
-                for brow in beList[2:]:
-                    if brow[1][1] == add_name:
+    if del_path:
+        #print json.dumps(beList[epro_date[0]], encoding="UTF-8", ensure_ascii=False)
+        ecwb = load_workbook(del_path)
+        ec_delws = ecwb["减少被保险人".decode("utf-8")]
+        ec_delList = getSheetAllData(ec_delws)
+        for test in ec_delList[1:]:
+            #print json.dumps(test, encoding="UTF-8", ensure_ascii=False)
+            del_name = test[1][1] #type: str
+
+            if del_name and del_name == epro_date[3][1]:
+                sdate1 = test[5][1]
+                sdate2 = getDateString(epro_date[2][1])
+                if sdate1:
+                    sdate1 = re.findall(r"\d{2,4}\d+\d+", sdate1)[0]
+                    sdate2 = sdate2.replace("-", "")
+                    if sdate1 == sdate2:
                         pass
-                        # print json.dumps(test, encoding="UTF-8", ensure_ascii=False)
-                        # print json.dumps(brow, encoding="UTF-8", ensure_ascii=False)
+                    else:
+                        print "错误数据:"
+                        print json.dumps(beList[epro_date[0]], encoding="UTF-8", ensure_ascii=False)
+            else:
+                print "错误数据"
+                print json.dumps(beList[epro_date[0]], encoding="UTF-8", ensure_ascii=False)
 
-
+    elif add_path:
+        pass
 
 
     else:
-        print "此用户没有查到数据："
-        print json.dumps(beList[epro_date[0]], encoding="UTF-8", ensure_ascii=False)
-
+        pass
 
 
 
