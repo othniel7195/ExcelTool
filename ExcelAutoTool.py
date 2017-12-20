@@ -2,6 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 from openpyxl import load_workbook
+from openpyxl import Workbook
 import os
 import sys
 import time
@@ -283,17 +284,17 @@ def getBasicExcelSheet():
 
 
 tdirs = getAllDir()
-print json.dumps(tdirs, encoding="UTF-8", ensure_ascii=False)
+#print json.dumps(tdirs, encoding="UTF-8", ensure_ascii=False)
 tfiles = getAllFile(tdirs)
-print json.dumps(tfiles, encoding="UTF-8", ensure_ascii=False)
+#print json.dumps(tfiles, encoding="UTF-8", ensure_ascii=False)
 
 
 mList = makeExcelIndex(tfiles)
-print json.dumps(mList, encoding="UTF-8", ensure_ascii=False)
+#print json.dumps(mList, encoding="UTF-8", ensure_ascii=False)
 
 bws = getBasicExcelSheet()
 beList = getSheetAllData(bws)
-print json.dumps(beList, encoding="UTF-8", ensure_ascii=False)
+#print json.dumps(beList, encoding="UTF-8", ensure_ascii=False)
 
 
 #查询起保日期
@@ -329,13 +330,14 @@ for idx in range(0, len(ersList), 1):
     lastDates.append(edates)
 
 
-print json.dumps(lastDates, encoding="UTF-8", ensure_ascii=False)
-
+#print json.dumps(lastDates, encoding="UTF-8", ensure_ascii=False)
 
 #通过日期查询文件名字
 #基础保单号
 basicPrdNumber = re.findall(r"[a-zA-Z0-9]+", beList[0][0][1])[0]
-print "基础数据的保单号: {0}".format(basicPrdNumber)
+#print "基础数据的保单号: {0}".format(basicPrdNumber)
+
+errorData = []
 
 for epro_date in lastDates:
     del_path = getFilePathWithEndProtectDate(mList, epro_date[2][1], basicPrdNumber)
@@ -343,6 +345,7 @@ for epro_date in lastDates:
     #print "根据起保日期查询到的文件路径： %s" %fpath
     if del_path:
         #print json.dumps(beList[epro_date[0]], encoding="UTF-8", ensure_ascii=False)
+        del_data_is_error = False
         ecwb = load_workbook(del_path)
         ec_delws = ecwb["减少被保险人".decode("utf-8")]
         ec_delList = getSheetAllData(ec_delws)
@@ -352,27 +355,77 @@ for epro_date in lastDates:
 
             if del_name and del_name == epro_date[3][1]:
                 sdate1 = test[5][1]
-                sdate2 = getDateString(epro_date[2][1])
+                sdate2 = getDateString(epro_date[1][1])
                 if sdate1:
                     sdate1 = re.findall(r"\d{2,4}\d+\d+", sdate1)[0]
                     sdate2 = sdate2.replace("-", "")
                     if sdate1 == sdate2:
-                        pass
+                        del_data_is_error = False
+                        break
                     else:
-                        print "错误数据:"
-                        print json.dumps(beList[epro_date[0]], encoding="UTF-8", ensure_ascii=False)
+                        del_data_is_error = True
             else:
-                print "错误数据"
-                print json.dumps(beList[epro_date[0]], encoding="UTF-8", ensure_ascii=False)
+                del_data_is_error = True
+
+        if del_data_is_error:
+             # print "错误数据1:"
+             # print json.dumps(beList[epro_date[0]], encoding="UTF-8", ensure_ascii=False)
+             errorData.append(beList[epro_date[0]])
+
 
     elif add_path:
-        pass
+        add_data_is_error = False
+        ecwb = load_workbook(add_path)
+        ec_addws = ecwb["增加被保险人".decode("utf-8")]
+        ec_addList = getSheetAllData(ec_addws)
 
+        for test1 in ec_addList[2:]:
+            add_name = test1[1][1] #type: str
+
+            if add_name and add_name == epro_date[3][1]:
+                sadate1 = test1[8][1]
+                sadate2 = getDateString(epro_date[1][1])
+                if sadate1:
+                    sadate1 = re.findall(r"\d{2,4}\d+\d+", sadate1)[0]
+                    sadate2 = sadate2.replace("-", "")
+                    if sadate1 == sadate2:
+                        add_data_is_error = False
+                        break
+                    else:
+                        add_data_is_error = True
+            else:
+                add_data_is_error = True
+
+        if add_data_is_error:
+            # print "错误数据2:"
+            # print json.dumps(beList[epro_date[0]], encoding="UTF-8", ensure_ascii=False)
+            errorData.append(beList[epro_date[0]])
 
     else:
-        pass
+        # print "错误数据3:"
+        # print json.dumps(beList[epro_date[0]], encoding="UTF-8", ensure_ascii=False)
+        errorData.append(beList[epro_date[0]])
 
 
+
+
+errorData.insert(0, beList[0])
+errorData.insert(1, beList[1])
+
+
+errorws = Workbook()
+errorws.create_sheet(u"错误数据", index=0)
+errorsheet = errorws.active
+
+for error_row in errorData:
+    for error_col in error_row:
+        indexName = error_col[0]
+        indexValue = error_col[1]
+        if indexValue:
+            errorsheet[indexName] = indexValue
+
+error_path = "{0}/{1}".format(sys.path[0], "保单错误数据.xlsx")
+errorws.save(error_path)
 
 
 
