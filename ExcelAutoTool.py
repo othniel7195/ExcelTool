@@ -10,11 +10,11 @@ import copy
 import re
 import json
 
-stdi,stdo,stde=sys.stdin,sys.stdout,sys.stderr
 reload(sys)
-sys.stdin,sys.stdout,sys.stderr=stdi,stdo,stde
-sys.setdefaultencoding('utf-8')
+sys.setdefaultencoding("utf-8")
 
+codingStr = sys.getfilesystemencoding()
+print codingStr
 
 def getAllDir():
     """
@@ -37,7 +37,7 @@ def isNeedFolder(folder):
     :type folder: str
     :rtype: bool
     """
-    if folder.endswith("众安换人"):
+    if folder.endswith("众安换人".decode("utf-8").encode(codingStr)):
         return True
     return False
 
@@ -302,21 +302,21 @@ beList = getSheetAllData(bws)
 
 
 #查询起保日期
-sscList = searchsheetCol(beList, "起保日期".decode("utf-8"))
+sscList = searchsheetCol(beList, "起保日期")
 #print json.dumps(sscList, encoding="UTF-8", ensure_ascii=False)
 
 ersList = getEveryRowsSearch(sscList,beList)
 #print json.dumps(ersList, encoding="UTF-8", ensure_ascii=False)
 
 #查询终保日期
-sscList2 = searchsheetCol(beList, "退保终止日期".decode("utf-8"))
+sscList2 = searchsheetCol(beList, "退保终止日期")
 #print json.dumps(sscList2, encoding="UTF-8", ensure_ascii=False)
 
 ersList2 = getEveryRowsSearch(sscList2,beList)
 #print json.dumps(ersList2, encoding="UTF-8", ensure_ascii=False)
 
 #获取姓名
-sncList = searchsheetCol(beList, "姓名".decode("utf-8"))
+sncList = searchsheetCol(beList, "姓名")
 esncList = getEveryRowsSearch(sncList, beList)
 #print json.dumps(esncList, encoding="UTF-8", ensure_ascii=False)
 
@@ -428,7 +428,7 @@ for error_row in errorData:
         if indexValue:
             errorsheet[indexName] = indexValue
 
-error_path = "{0}/{1}".format(sys.path[0], "保单错误数据.xlsx".decode("utf-8"))
+error_path = "{0}/{1}".format(sys.path[0], "保单错误数据.xlsx".decode("utf-8").encode(codingStr))
 errorws.save(error_path)
 
 print "结束了！！！！！！"
