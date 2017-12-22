@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -*- coding: UTF-8 -*-
+# -*- coding: utf-8 -*-
 
 from openpyxl import load_workbook
 from openpyxl import Workbook
@@ -10,7 +10,9 @@ import copy
 import re
 import json
 
+stdi,stdo,stde=sys.stdin,sys.stdout,sys.stderr
 reload(sys)
+sys.stdin,sys.stdout,sys.stderr=stdi,stdo,stde
 sys.setdefaultencoding('utf-8')
 
 
@@ -35,7 +37,7 @@ def isNeedFolder(folder):
     :type folder: str
     :rtype: bool
     """
-    if folder.endswith("众安换人".decode("utf-8")):
+    if folder.endswith("众安换人"):
         return True
     return False
 
@@ -371,7 +373,7 @@ for epro_date in lastDates:
 
         if del_data_is_error:
              # print "错误数据1:"
-             # print json.dumps(beList[epro_date[0]], encoding="UTF-8", ensure_ascii=False)
+             print json.dumps(beList[epro_date[0]], encoding="UTF-8", ensure_ascii=False)
              errorData.append(beList[epro_date[0]])
 
 
@@ -400,12 +402,12 @@ for epro_date in lastDates:
 
         if add_data_is_error:
             # print "错误数据2:"
-            # print json.dumps(beList[epro_date[0]], encoding="UTF-8", ensure_ascii=False)
+            print json.dumps(beList[epro_date[0]], encoding="UTF-8", ensure_ascii=False)
             errorData.append(beList[epro_date[0]])
 
     else:
         # print "错误数据3:"
-        # print json.dumps(beList[epro_date[0]], encoding="UTF-8", ensure_ascii=False)
+        print json.dumps(beList[epro_date[0]], encoding="UTF-8", ensure_ascii=False)
         errorData.append(beList[epro_date[0]])
 
 
@@ -429,7 +431,7 @@ for error_row in errorData:
 error_path = "{0}/{1}".format(sys.path[0], "保单错误数据.xlsx".decode("utf-8"))
 errorws.save(error_path)
 
-
+print "结束了！！！！！！"
 
 
 
